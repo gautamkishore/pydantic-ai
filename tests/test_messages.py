@@ -1799,7 +1799,7 @@ def test_repr_handles_non_bool_ne_value():
     """
 
     class NonBoolLike:
-        def __ne__(self, other: object) -> 'NonBoolLike':
+        def __ne__(self, other: object) -> 'NonBoolLike':  # type: ignore[override]
             return NonBoolLike()
 
         def __bool__(self) -> bool:
